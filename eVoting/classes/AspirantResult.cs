@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace eVoting.classes
         public int NumberOfVotes { get; set; }
         public string Title { get; set; }
 
-        private readonly string connectionString = "server=localhost;port=3306;username=root;password=;database=e_voting";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
 
         public Dictionary<string, List<AspirantResult>> GetAspirantResultsGroupByTitle()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace eVoting.classes
         public string TitleId { get; set; }
         public string Name { get; set; }
         // connection string
-        private readonly string connectionString = "server=localhost;user=root;database=e_voting;port=3306;password=";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
         // Get all titles from the titles table
         public List<Title> GetTitles()

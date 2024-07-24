@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -13,7 +10,7 @@ namespace eVoting.classes
         public string AdminId { get; set; }
         public string Password { get; set; }
 
-        private readonly string connectionString = "server=localhost;user id=root;password=;database=e_voting";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
         // Get admin from admins table
         // No use of hashpassword

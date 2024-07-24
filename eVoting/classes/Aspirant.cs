@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -21,7 +22,7 @@ namespace eVoting.classes
         public byte[] ImageUri { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Today;
 
-        private readonly string connectionString = "server=localhost;port=3306;username=root;password=;database=e_voting";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
         // Get all aspirants group by titleID
         public Dictionary<int, List<Aspirant>> GetAspirantsGroupedByTitleId()

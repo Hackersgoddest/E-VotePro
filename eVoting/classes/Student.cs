@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using System.Configuration;
 
 
 namespace eVoting.classes
@@ -17,7 +15,7 @@ namespace eVoting.classes
         public string Password { get; set; }
         public string Programme { get; set; }
         // database connection string
-        private readonly string connectionString = "server=localhost;database=e_voting;uid=root;pwd=;";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
         // Hashing password
         public string HashPassword(string password)

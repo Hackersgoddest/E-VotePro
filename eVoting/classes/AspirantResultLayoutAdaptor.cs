@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace eVoting.classes
 {
@@ -14,7 +12,7 @@ namespace eVoting.classes
     {
         public Student CurrentStudent { get; set; }
 
-        private readonly string connectionString = "server=localhost;database=e_voting;uid=root;pwd=;";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         public void ArrangeAspirants(GroupBox groupBox, List<AspirantResult> aspirants)
         {
             // Clear existing controls

@@ -38,6 +38,7 @@
             this.votingPanel.Name = "votingPanel";
             this.votingPanel.Size = new System.Drawing.Size(515, 452);
             this.votingPanel.TabIndex = 0;
+            this.votingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.votingPanel_Paint);
             // 
             // VotingPage
             // 
